@@ -14,11 +14,11 @@ apply_border() {
     then
         if [ "$BGCOLOR" != "black" ]
         then
-            magick "$f" -colorspace RGB -resize '1080x1350' -gravity center -background white -extent '1080x1350' -colorspace sRGB -set filename:f '%t(white border).%e' '%[filename:f]'
+            magick "$f" -colorspace RGB -resize '1080x1350' -gravity center -background white -extent '1080x1350' -colorspace sRGB -quality 90 -set filename:f '%t(white border).%e' '%[filename:f]'
         fi
         if [ "$BGCOLOR" != "white" ]
         then
-            magick "$f" -colorspace RGB -resize '1080x1350' -gravity center -background black -extent '1080x1350' -colorspace sRGB -set filename:f '%t(black border).%e' '%[filename:f]'
+            magick "$f" -colorspace RGB -resize '1080x1350' -gravity center -background black -extent '1080x1350' -colorspace sRGB -quality 90 -set filename:f '%t(black border).%e' '%[filename:f]'
         fi
     fi
 }
